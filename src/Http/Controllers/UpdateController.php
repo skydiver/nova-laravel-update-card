@@ -13,7 +13,7 @@ class UpdateController
 
         $versions = Cache::remember('update-card', 3600, function () {
             $client = new Client();
-            $package = $client->get('laravel/laravel');
+            $package = $client->get('laravel/framework');
             return array_map(function ($version) {
                 return $version->getVersion();
             }, $package->getVersions());
