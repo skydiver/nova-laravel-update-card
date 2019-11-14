@@ -1,6 +1,6 @@
 <?php
 
-namespace Beyondcode\LaravelUpdateCard;
+namespace Skydiver\UpdateCard;
 
 
 use Composer\Semver\Semver;

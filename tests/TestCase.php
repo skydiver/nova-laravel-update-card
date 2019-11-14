@@ -1,10 +1,10 @@
 <?php
 
-namespace Beyondcode\LaravelUpdateCard\Tests;
+namespace Beyondcode\UpdateCard\Tests;
 
 use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Beyondcode\LaravelUpdateCard\CardServiceProvider;
+use Beyondcode\UpdateCard\CardServiceProvider;
 
 abstract class TestCase extends Orchestra
 {

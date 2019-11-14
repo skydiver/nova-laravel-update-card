@@ -1,8 +1,9 @@
 <?php
 
-use Beyondcode\LaravelUpdateCard\Version;
+use Skydiver\UpdateCard\Version;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Skydiver\UpdateCard\Http\Controllers\UpdateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/check', \Beyondcode\LaravelUpdateCard\Http\Controllers\UpdateController::class.'@check');
+Route::get('/check', UpdateController::class . '@check');
