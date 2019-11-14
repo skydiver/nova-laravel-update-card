@@ -48,7 +48,7 @@ export default {
     },
 
     mounted() {
-        Nova.request().get('/nova-vendor/beyondcode/laravel-update-card/check')
+        Nova.request().get('/nova-vendor/skydiver/update-card/check')
             .then(({data}) => {
                 this.latestVersion = data.latest_version;
                 this.currentVersion = data.current_version;

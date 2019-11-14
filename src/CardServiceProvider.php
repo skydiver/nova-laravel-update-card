@@ -1,6 +1,6 @@
 <?php
 
-namespace Beyondcode\LaravelUpdateCard;
+namespace Skydiver\UpdateCard;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;
@@ -38,8 +38,8 @@ class CardServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova'])
-                ->prefix('nova-vendor/beyondcode/laravel-update-card')
-                ->group(__DIR__.'/../routes/api.php');
+            ->prefix('nova-vendor/skydiver/update-card')
+            ->group(__DIR__.'/../routes/api.php');
     }
 
     /**

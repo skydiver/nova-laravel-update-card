@@ -1,6 +1,6 @@
 <?php
 
-namespace Beyondcode\LaravelUpdateCard\Tests;
+namespace Skydiver\UpdateCard\Tests;
 
 class UpdateControllerTest extends TestCase
 {
@@ -8,7 +8,7 @@ class UpdateControllerTest extends TestCase
     public function it_returns_version_information()
     {
         $content = $this
-            ->get('nova-vendor/beyondcode/laravel-update-card/check')
+            ->get('nova-vendor/skydiver/update-card/check')
             ->getContent();
 
         $versionInfo = json_decode($content, true);

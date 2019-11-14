@@ -1,5 +1,5 @@
 {
-    "name": "beyondcode/nova-laravel-update-card",
+    "name": "skydiver/nova-update-card",
     "description": "A Laravel Nova card that shows you if you're running the latest Version of Laravel.",
     "keywords": [
         "laravel",
@@ -32,18 +32,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Beyondcode\\LaravelUpdateCard\\": "src/"
+            "Skydiver\\UpdateCard\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Beyondcode\\LaravelUpdateCard\\Tests\\": "tests/"
+            "Skydiver\\UpdateCard\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Beyondcode\\LaravelUpdateCard\\CardServiceProvider"
+                "Skydiver\\UpdateCard\\CardServiceProvider"
             ]
         }
     },
