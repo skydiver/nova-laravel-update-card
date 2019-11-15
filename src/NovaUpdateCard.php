@@ -1,10 +1,9 @@
 <?php
-
-namespace Skydiver\UpdateCard;
+namespace Skydiver\NovaUpdateCard;
 
 use Laravel\Nova\Card;
 
-class UpdateCard extends Card
+class NovaUpdateCard extends Card
 {
     /**
      * The width of the card (1/3, 1/2, or full).
@@ -20,6 +19,6 @@ class UpdateCard extends Card
      */
     public function component()
     {
-        return 'update-card';
+        return 'nova-update-card';
     }
 }

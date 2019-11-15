@@ -1,6 +1,6 @@
 <?php
 
-namespace Skydiver\UpdateCard;
+namespace Skydiver\NovaUpdateCard;
 
 
 use Composer\Semver\Semver;

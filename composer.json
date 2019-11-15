@@ -32,18 +32,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Skydiver\\UpdateCard\\": "src/"
+            "Skydiver\\NovaUpdateCard\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Skydiver\\UpdateCard\\Tests\\": "tests/"
+            "Skydiver\\NovaUpdateCard\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Skydiver\\UpdateCard\\CardServiceProvider"
+                "Skydiver\\NovaUpdateCard\\CardServiceProvider"
             ]
         }
     },

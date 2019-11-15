@@ -1,3 +1,3 @@
-Nova.booting((Vue, router) => {
-  Vue.component('update-card', require('./components/Card'));
+Nova.booting(Vue => {
+  Vue.component('nova-update-card', require('./components/Card'));
 });
