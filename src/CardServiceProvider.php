@@ -1,6 +1,6 @@
 <?php
 
-namespace Skydiver\UpdateCard;
+namespace Skydiver\NovaUpdateCard;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;
@@ -21,8 +21,8 @@ class CardServiceProvider extends ServiceProvider
         });
 
         Nova::serving(function (ServingNova $event) {
-            Nova::script('nova-laravel-update', __DIR__.'/../dist/js/card.js');
-            Nova::style('nova-laravel-update', __DIR__.'/../dist/css/card.css');
+            Nova::script('nova-update-card', __DIR__.'/../dist/js/card.js');
+            Nova::style('nova-update-card', __DIR__.'/../dist/css/card.css');
         });
     }
 
@@ -38,7 +38,7 @@ class CardServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova'])
-            ->prefix('nova-vendor/skydiver/update-card')
+            ->prefix('nova-vendor/skydiver/nova-update-card')
             ->group(__DIR__.'/../routes/api.php');
     }
 

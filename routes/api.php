@@ -1,9 +1,7 @@
 <?php
 
-use Skydiver\UpdateCard\Version;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Skydiver\UpdateCard\Http\Controllers\UpdateController;
+use Skydiver\NovaUpdateCard\Http\Controllers\UpdateController;
 
 /*
 |--------------------------------------------------------------------------
