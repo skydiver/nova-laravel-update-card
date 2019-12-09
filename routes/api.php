@@ -14,4 +14,4 @@ use Skydiver\NovaUpdateCard\Http\Controllers\UpdateController;
 |
 */
 
-Route::get('/check', UpdateController::class . '@check');
+Route::get('/laravel-check', UpdateController::class . '@check');

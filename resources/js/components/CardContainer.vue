@@ -3,39 +3,9 @@
     <div class="flex justify-center items-centers">
       <div class="relative w-full max-w-xl">
         <card class="flex flex-col items-center justify-center" style="min-height: 118px;">
-          <div class="absolute pin-l laravel-bg"></div>
+          <div class="absolute pin-l" :class="containerClass"></div>
           <div class="px-3 py-3 w-full">
-            <div class="content-box">
-              <div v-if="currentVersion">
-                <h1
-                  v-if="!updateAvailable"
-                  class="text-3xl text-80 font-light text-center"
-                >Awesome, you're using the latest version of Laravel!</h1>
-                <h1
-                  class="text-3xl text-error-message font-light text-center"
-                  v-else
-                >A new version of Laravel is available.</h1>
-
-                <div class="flex flex-wrap">
-                  <CardVersion
-                    v-if="updateAvailable"
-                    :version="currentVersion"
-                    label="Your version:"
-                    alignment="right"
-                  />
-                  <CardVersion
-                    v-if="latestVersion"
-                    :version="latestVersion"
-                    :full-width="!updateAvailable"
-                    label="Latest version:"
-                    alignment="left"
-                  />
-                </div>
-              </div>
-              <div v-else>
-                <h1 class="text-3xl text-80 font-light text-center">Checking for Laravel updates ...</h1>
-              </div>
-            </div>
+            <slot></slot>
           </div>
         </card>
       </div>
@@ -44,32 +14,20 @@
 </template>
 
 <script>
-import CardVersion from "./CardVersion";
-
 export default {
-  props: ["card"],
-  components: {
-    CardVersion
+  props: {
+    type: {
+      type: String,
+      default: ""
+    }
   },
-  data() {
-    return {
-      updateAvailable: false,
-      currentVersion: null,
-      latestVersion: null
-    };
-  },
-  mounted() {
-    Nova.request()
-      .get("/nova-vendor/skydiver/nova-update-card/check")
-      .then(({ data }) => {
-        this.latestVersion = data.latest_version;
-        this.currentVersion = data.current_version;
-        this.updateAvailable = data.update_available;
-      });
+  computed: {
+    containerClass() {
+      return `${this.type}-bg`;
+    }
   }
 };
 </script>
-
 
 <style scoped>
 .st0 {
@@ -83,9 +41,5 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.content-box {
-  padding-left: 150px;
 }
 </style>
