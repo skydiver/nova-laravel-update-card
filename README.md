@@ -7,7 +7,7 @@ Check if you're running the latest versions of Laravel or Nova right from your d
 
 > This is a fork of Nova [Laravel Update Card](https://github.com/beyondcode/nova-laravel-update-card). All the credits goes to original authors.
 
-![tinker screenshot](screenshot.png)
+![tinker screenshot](https://github.com/skydiver/nova-update-card/raw/master/screenshot.png)
 
 ## Installation
 
