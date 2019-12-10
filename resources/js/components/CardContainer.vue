@@ -34,6 +34,10 @@ export default {
   fill: #fb503b;
 }
 
+.st1 {
+  fill: #252d37;
+}
+
 .laravel-bg {
   width: 150px;
   height: 100%;
@@ -41,5 +45,14 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.nova-bg {
+  width: 150px;
+  height: 80px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path class='st1' d='M25.8 25.6C23 28.3 19.2 30 15 30c-4.7 0-8.9-2.1-11.6-5.4 6 4.9 14.8 4.6 20.4-.9a9.42 9.42 0 0 0 0-13.5c-3.8-3.7-9.9-3.7-13.6 0-1.6 1.6-1.6 4.2 0 5.8s4.2 1.6 5.8 0c.5-.5 1.4-.5 1.9 0s.5 1.4 0 1.9c-2.7 2.7-7.1 2.7-9.7 0-2.7-2.7-2.7-7 0-9.6 4.8-4.8 12.7-4.8 17.5 0 4.8 4.7 4.9 12.5.1 17.3zm.8-20.2C20.6.5 11.8.8 6.2 6.3a9.42 9.42 0 0 0 0 13.5c3.8 3.7 9.9 3.7 13.6 0 1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8 0c-.5.5-1.4.5-1.9 0s-.5-1.4 0-1.9c2.7-2.7 7.1-2.7 9.7 0s2.7 7 0 9.6c-4.8 4.8-12.7 4.8-17.5 0C-.5 17-.6 9.2 4.3 4.4 7 1.7 10.8 0 15 0c4.7 0 8.9 2.1 11.6 5.4z' fill='%23252d37'/></svg>");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70px 70px;
 }
 </style>

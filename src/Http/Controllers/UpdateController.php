@@ -5,10 +5,11 @@ namespace Skydiver\NovaUpdateCard\Http\Controllers;
 use Illuminate\Support\Facades\Cache;
 use Packagist\Api\Client;
 use Skydiver\NovaUpdateCard\Version;
+use Laravel\Nova\Nova;
 
 class UpdateController
 {
-    public function check()
+    public function laravelCheck()
     {
 
         $versions = Cache::remember('nova-update-card', 3600, function () {
@@ -28,4 +29,14 @@ class UpdateController
             'update_available' => version_compare($current, $latest, '<')
         ];
     }
+
+    public function novaCheck()
+    {
+        return [
+            'current_version' => Nova::version(),
+            'latest_version' => 2,
+            'update_available' => true
+        ];
+    }
+
 }
