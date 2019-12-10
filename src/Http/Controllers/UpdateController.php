@@ -13,7 +13,7 @@ class UpdateController
     public function laravelCheck()
     {
 
-        $versions = Cache::remember('nova-update-card', 3600, function () {
+        $versions = Cache::remember('laravel-update-card', 3600, function () {
             $client = new Client();
             $package = $client->get('laravel/framework');
             return array_map(function ($version) {
@@ -33,13 +33,16 @@ class UpdateController
 
     public function novaCheck()
     {
-        $dom = new Dom;
-        $dom->loadFromUrl('https://nova.laravel.com/releases');
-        $url = $dom->find('.list-reset li')[0]->find('a')[0]->getAttribute('href');
-        $url_array = explode('/', $url);
 
-        $latest = end($url_array);
         $current = Nova::version();
+
+        $latest = Cache::remember('nova-update-card', 3600, function () {
+            $dom = new Dom;
+            $dom->loadFromUrl('https://nova.laravel.com/releases');
+            $url = $dom->find('.list-reset li')[0]->find('a')[0]->getAttribute('href');
+            $url_array = explode('/', $url);
+            return end($url_array);
+        });
 
         return [
             'current_version' => $current,

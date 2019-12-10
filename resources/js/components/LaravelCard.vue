@@ -5,7 +5,7 @@
         <h1
           v-if="!updateAvailable"
           class="text-3xl text-80 font-light text-center"
-        >Awesome, you're using the latest version of Laravel!</h1>
+        >You're using the latest version of Laravel!</h1>
         <h1
           class="text-3xl text-error-message font-light text-center"
           v-else
