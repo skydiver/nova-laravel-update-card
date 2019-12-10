@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Cache;
 use Packagist\Api\Client;
 use Skydiver\NovaUpdateCard\Version;
 use Laravel\Nova\Nova;
+use PHPHtmlParser\Dom;
 
 class UpdateController
 {
@@ -32,10 +33,18 @@ class UpdateController
 
     public function novaCheck()
     {
+        $dom = new Dom;
+        $dom->loadFromUrl('https://nova.laravel.com/releases');
+        $url = $dom->find('.list-reset li')[0]->find('a')[0]->getAttribute('href');
+        $url_array = explode('/', $url);
+
+        $latest = end($url_array);
+        $current = Nova::version();
+
         return [
-            'current_version' => Nova::version(),
-            'latest_version' => 2,
-            'update_available' => true
+            'current_version' => $current,
+            'latest_version' => $latest,
+            'update_available' => version_compare($current, $latest, '<')
         ];
     }
 

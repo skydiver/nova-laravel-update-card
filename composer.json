@@ -23,8 +23,9 @@
     "require": {
         "php": ">=7.1.0",
         "composer/semver": "^1.4",
+        "knplabs/packagist-api": "^1.5",
         "laravel/nova": "*",
-        "knplabs/packagist-api": "^1.5"
+        "paquettg/php-html-parser": "^2.1"
     },
     "require-dev": {
       "orchestra/testbench": "^3.6",
