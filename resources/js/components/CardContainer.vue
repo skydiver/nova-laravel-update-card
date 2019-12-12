@@ -1,5 +1,5 @@
 <template>
-  <div class="px-3 mb-6 w-full">
+  <div class="mb-6 w-full">
     <div class="flex justify-center items-centers">
       <div class="relative w-full max-w-xl">
         <card class="flex flex-col items-center justify-center" style="min-height: 118px;">
