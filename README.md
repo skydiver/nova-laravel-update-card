@@ -35,18 +35,11 @@ public function cards()
 
 ## Usage
 
-Just visit your Nova dashboard and you'll get information about whether or not you're running the latest stable Laravel version.
-
-### Testing
-
-``` bash
-composer test
-```
+Just visit your Nova dashboard and you'll get information about your installed Laravel and Nova versions.
 
 ## Credits
 
-- [Marcel Pociot](https://github.com/mpociot)
-- [All Contributors](../../contributors)
+[Laravel Update Card](https://github.com/beyondcode/nova-laravel-update-card)
 
 ## License
 
