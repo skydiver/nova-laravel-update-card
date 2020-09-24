@@ -3,7 +3,7 @@
 namespace Skydiver\NovaUpdateCard\Http\Controllers;
 
 use Illuminate\Support\Facades\Cache;
-use Packagist\Api\Client;
+use Illuminate\Support\Facades\Http;
 use Skydiver\NovaUpdateCard\Version;
 use Laravel\Nova\Nova;
 use PHPHtmlParser\Dom;
@@ -12,13 +12,11 @@ class UpdateController
 {
     public function laravelCheck()
     {
-
         $versions = Cache::remember('laravel-update-card', 3600, function () {
-            $client = new Client();
-            $package = $client->get('laravel/framework');
-            return array_map(function ($version) {
-                return $version->getVersion();
-            }, $package->getVersions());
+            $request = Http::get('https://packagist.org/p/laravel/framework.json');
+            $response = $request->json();
+            $versions = $response['packages']['laravel/framework'];
+            return collect($versions)->keys()->toArray();
         });
 
         $current = app()->version();
