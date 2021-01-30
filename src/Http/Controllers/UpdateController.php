@@ -37,9 +37,9 @@ class UpdateController
         $latest = Cache::remember('nova-update-card', 3600, function () {
             $dom = new Dom;
             $dom->loadFromUrl('https://nova.laravel.com/releases');
-            $url = $dom->find('.list-reset li')[0]->find('a')[0]->getAttribute('href');
-            $url_array = explode('/', $url);
-            return end($url_array);
+            $data = $dom->find('#app')->getAttribute('data-page');
+            $data = json_decode(html_entity_decode($data));
+            return $data->props->releases[0]->version;
         });
 
         return [
